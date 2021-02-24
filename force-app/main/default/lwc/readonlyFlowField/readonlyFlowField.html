@@ -1,0 +1,15 @@
+<template>
+    <template if:true={objectName}>
+        <template if:true={isReadonly}>
+            <lightning-record-view-form object-api-name={objectName} record-id={recordId}>
+                <lightning-output-field field-name={fieldName} variant="label-stacked"></lightning-output-field>
+            </lightning-record-view-form>    
+
+        </template>
+        <template if:false={isReadonly}>
+            <lightning-record-edit-form object-api-name={objectName} record-id={recordId}>
+                <lightning-input-field field-name={fieldName} variant="label-stacked"></lightning-input-field>
+            </lightning-record-edit-form>    
+        </template>        
+    </template>
+</template>
